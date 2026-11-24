@@ -1,0 +1,296 @@
+/* "Become a provider" section on the home page. Same look as the other home sections:
+   white cards with a light border, teal accents on pale aqua, the green primary button. */
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--home-line, #dfe6ef);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px -22px #1f293366;
+}
+.offer,
+.start {
+  min-width: 0;
+  padding: 28px;
+}
+.offer {
+  background: var(--home-neutral, #f4f6f9);
+  border-right: 1px solid var(--home-line, #dfe6ef);
+}
+.label {
+  color: var(--home-teal, #0f9b98);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Services */
+.services {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.serviceTile {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 2px;
+  height: 100%;
+  padding: 16px 6px 14px;
+  border: 1px solid var(--home-line, #dfe6ef);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--foreground, #242323);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+a.serviceTile:hover,
+a.serviceTile:focus-visible {
+  border-color: var(--home-teal, #0f9b98);
+  box-shadow: 0 8px 24px #264c4810;
+  transform: translateY(-2px);
+}
+a.serviceTile:focus-visible {
+  outline: 3px solid #0f9b9855;
+  outline-offset: 2px;
+}
+.icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: var(--home-aqua, #ccfbf1);
+  color: var(--home-teal, #0f9b98);
+}
+.serviceTile strong {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.serviceTile small {
+  min-height: 2.7em;
+  color: var(--home-muted, #617185);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* Perks */
+.perks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.perks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--foreground, #242323);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--home-aqua, #ccfbf1);
+  color: var(--home-teal, #0f9b98);
+}
+
+/* How it works + call to action */
+.start {
+  display: flex;
+  flex-direction: column;
+}
+.steps {
+  display: grid;
+  gap: 16px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.steps li {
+  position: relative;
+  display: flex;
+  gap: 14px;
+}
+/* Line joining the steps. */
+.steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 46px;
+  bottom: -12px;
+  border-left: 2px dashed var(--home-line, #dfe6ef);
+}
+.stepIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--home-aqua, #ccfbf1);
+  color: var(--home-teal, #0f9b98);
+}
+.stepNumber {
+  color: var(--home-teal, #0f9b98);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.steps h3 {
+  margin-top: 1px;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground, #242323);
+}
+.steps p {
+  margin-top: 2px;
+  color: var(--home-muted, #617185);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+/* The home page's primary button, a little larger for the main call to action. */
+.cta {
+  padding: 13px 24px;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.cta:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.secondary {
+  color: var(--home-teal, #0f9b98);
+  font-size: 13px;
+  font-weight: 600;
+}
+.secondary:hover {
+  text-decoration: underline;
+}
+.note {
+  margin-top: 12px;
+  color: var(--home-muted, #617185);
+  font-size: 12.5px;
+}
+.note strong {
+  color: var(--foreground, #242323);
+}
+
+/* Signed-in provider: shortcut cards */
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.shortcut {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  padding: 18px;
+  border: 1px solid var(--home-line, #dfe6ef);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--foreground, #242323);
+  box-shadow: 0 2px 1px #28201d03;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.shortcut:hover {
+  border-color: #b5c0cf;
+  box-shadow: 0 8px 24px #264c4810;
+}
+.shortcut .icon {
+  margin-bottom: 0;
+}
+.shortcutText {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+.shortcutText strong {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.shortcutText small {
+  color: var(--home-muted, #617185);
+  font-size: 12.5px;
+}
+.shortcutArrow {
+  flex-shrink: 0;
+  color: var(--home-teal, #0f9b98);
+}
+
+@media (max-width: 1100px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+  .offer {
+    border-right: 0;
+    border-bottom: 1px solid var(--home-line, #dfe6ef);
+  }
+  .shortcuts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .offer,
+  .start {
+    padding: 20px 16px;
+  }
+  .services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .perks {
+    grid-template-columns: 1fr;
+  }
+  .cta {
+    width: 100%;
+  }
+}
+@media (max-width: 520px) {
+  .shortcuts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .serviceTile {
+    transition: none;
+  }
+}

@@ -1,0 +1,487 @@
+/* Guide application (steps 4–8). Same tokens as auth.module.css / vehicle.module.css. */
+
+/* Multi-line text, styled like the pill inputs */
+.textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 14px 16px;
+  border-radius: 22px;
+  border: 1px solid #dfe6ef;
+  background: #f4f6f9;
+  color: #242323;
+  font: inherit;
+  font-size: 13.5px;
+  line-height: 1.55;
+  resize: vertical;
+  outline: none;
+}
+.textarea:hover {
+  border-color: #cbd3de;
+}
+.textarea:focus {
+  background: #fff;
+  border-color: #cbd3de;
+}
+.textareaError {
+  border-color: #e7a99b;
+}
+.counter {
+  justify-self: end;
+  font-size: 11px;
+  color: #617185;
+  padding-right: 6px;
+}
+.counterOk {
+  color: #0b7f7c;
+}
+
+/* Tag input: type, press Enter or comma */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 6px 8px 6px 12px;
+  border-radius: 26px;
+  border: 1px solid #dfe6ef;
+  background: #f4f6f9;
+  cursor: text;
+}
+.tags:focus-within {
+  background: #fff;
+  border-color: #cbd3de;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 30px;
+  padding: 0 6px 0 12px;
+  border-radius: 30px;
+  background: #e0f5f2;
+  color: #0b7f7c;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.tag button {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.tag button:hover {
+  background: rgba(15, 155, 152, 0.15);
+}
+.tagInput {
+  flex: 1;
+  min-width: 140px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: #242323;
+  font-size: 13.5px;
+  outline: none;
+}
+
+/* Languages */
+.langRow {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 20px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+}
+.langHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.langHead strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #242323;
+}
+.levels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 3px;
+  border-radius: 30px;
+  background: #f4f6f9;
+  border: 1px solid #dfe6ef;
+}
+.level {
+  height: 32px;
+  border: 0;
+  border-radius: 30px;
+  background: transparent;
+  color: #617185;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.levelOn {
+  background: #0f9b98;
+  color: #fff;
+  font-weight: 600;
+}
+.remove {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #617185;
+  cursor: pointer;
+}
+.remove:hover {
+  background: #fdf2f0;
+  color: #ba3b24;
+}
+.addRow {
+  display: flex;
+  gap: 8px;
+}
+.addRow > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+.addButton {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 30px;
+  border: 1px dashed #0f9b98;
+  background: #fff;
+  color: #0b7f7c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.addButton:hover:not(:disabled) {
+  background: #f3fbfa;
+}
+.addButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Services */
+.serviceCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+}
+.serviceIcon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e0f5f2;
+  color: #0f9b98;
+}
+.serviceText {
+  flex: 1;
+  min-width: 0;
+}
+.serviceText strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242323;
+}
+.serviceText span {
+  display: block;
+  font-size: 12px;
+  color: #617185;
+}
+.price {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0b7f7c;
+  white-space: nowrap;
+}
+.cardActions {
+  display: flex;
+  gap: 4px;
+}
+.smallButton {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 30px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+  color: #242323;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.smallButton:hover {
+  border-color: #0f9b98;
+  color: #0f9b98;
+}
+.editor {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid #0f9b98;
+  background: #fbfefe;
+}
+.editorTitle {
+  margin: 0;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #242323;
+}
+.editorActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 22px 16px;
+  border-radius: 22px;
+  border: 1px dashed #cbd3de;
+  background: #f9fafb;
+  text-align: center;
+  color: #617185;
+  font-size: 12.5px;
+}
+.empty strong {
+  color: #242323;
+  font-size: 14px;
+}
+.or {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.or::before,
+.or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dfe6ef;
+}
+
+/* Weekly schedule */
+.week {
+  display: grid;
+  gap: 6px;
+}
+.dayRow {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 6px 12px;
+  border-radius: 18px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+}
+.dayOff {
+  background: #f9fafb;
+}
+.dayToggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: none;
+  padding: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #242323;
+  cursor: pointer;
+}
+.switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex: none;
+  border-radius: 20px;
+  background: #cbd3de;
+  transition: background 0.15s;
+}
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+.switchOn {
+  background: #0f9b98;
+}
+.switchOn::after {
+  transform: translateX(16px);
+}
+.times {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+  color: #617185;
+  font-size: 12px;
+}
+.time {
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 30px;
+  border: 1px solid #dfe6ef;
+  background: #f4f6f9;
+  color: #242323;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+.time:focus {
+  background: #fff;
+}
+.closed {
+  justify-self: end;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+.tile {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #dfe6ef;
+  background: #f4f6f9;
+}
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tileRemove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.6);
+  color: #fff;
+  cursor: pointer;
+}
+.tileRemove:hover {
+  background: #ba3b24;
+}
+.docGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.doc {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 20px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+}
+.doc strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #242323;
+}
+
+/* Review */
+.status {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid #b7ece2;
+  background: #f0fdf9;
+  color: #0b7f7c;
+}
+.status strong {
+  display: block;
+  font-size: 14px;
+  color: #242323;
+}
+.status p {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: #617185;
+}
+.statusWarn {
+  border-color: #f1dfb8;
+  background: #fffaf0;
+  color: #b7791f;
+}
+.missing {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  font-size: 12.5px;
+  color: #8a5a12;
+}
+
+@media (max-width: 560px) {
+  .dayRow {
+    grid-template-columns: 1fr;
+  }
+  .times {
+    justify-content: flex-start;
+  }
+  .levels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .serviceCard {
+    flex-wrap: wrap;
+  }
+}

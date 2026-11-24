@@ -1,0 +1,471 @@
+/* Provider area → City to City. Buttons, badges and cards come from sections.module.css. */
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+}
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.cardTop > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.route {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #242323;
+}
+.areas {
+  font-size: 12.5px;
+  color: #617185;
+  overflow-wrap: anywhere;
+}
+.fare {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: none;
+}
+.fare strong {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 18px;
+  color: #242323;
+}
+.fare span {
+  font-size: 11px;
+  color: #617185;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.meta dt {
+  font-size: 11px;
+  color: #617185;
+}
+.meta dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #242323;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.actions button,
+.counter button {
+  cursor: pointer;
+}
+.counter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.counter label {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+.counter input {
+  width: 130px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #dfe6ef;
+  border-radius: 14px;
+  font-size: 13px;
+  outline: none;
+}
+.counter input:focus {
+  border-color: #0f9b98;
+}
+.sent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: #f0fbf5;
+  color: #067647;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+.bookings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+}
+.bookings a {
+  color: #0f9b98;
+}
+.muted {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  font-size: 12.5px;
+  color: #617185;
+}
+.warn {
+  composes: muted;
+  color: #a15c07;
+}
+
+.sharer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #e6f7f6;
+}
+.sharer > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f9b98;
+}
+
+@media (max-width: 640px) {
+  .meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cardTop {
+    flex-direction: column;
+  }
+  .fare {
+    align-items: flex-start;
+  }
+  .actions,
+  .counter {
+    justify-content: stretch;
+  }
+  .actions button,
+  .counter button {
+    flex: 1 1 auto;
+  }
+}
+
+/* ── BANJARA commission (driver balance) ─────────────────────────── */
+.balanceTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.balanceTop > div {
+  display: grid;
+  gap: 2px;
+}
+.balanceLabel {
+  font-size: 12.5px;
+  color: #617185;
+}
+.balanceAmount {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1c1917;
+}
+.balanceAmount[data-blocked] {
+  color: #ba3b24;
+}
+.balanceNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: #a15c07;
+}
+.statusBlocked,
+.statusDue,
+.statusClear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.statusBlocked {
+  background: #fdf2f0;
+  color: #ba3b24;
+}
+.statusDue {
+  background: #fffbf2;
+  color: #a15c07;
+}
+.statusClear {
+  background: #f0fbf5;
+  color: #067647;
+}
+.payBox {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f7f9fb;
+}
+.payBox h4,
+.reportForm h4 {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.payTo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.payTo li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+  font-size: 13px;
+}
+.payTo li > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.payTo small {
+  color: #617185;
+}
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+}
+.reportForm {
+  display: grid;
+  gap: 10px;
+}
+.reportFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.reportFields label {
+  display: grid;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #4f5d6e;
+}
+.reportFields input,
+.reportFields select {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #dfe6ef;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  color: #1c1917;
+}
+.reportFields input:focus,
+.reportFields select:focus {
+  outline: 2px solid #0f9b98;
+  outline-offset: 1px;
+}
+.wide {
+  grid-column: 1 / -1;
+}
+.history summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f9b98;
+  margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+  .reportFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Cost pricing: the driver's three prices and their breakdown ───── */
+.levels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.level {
+  display: grid;
+  gap: 2px;
+  justify-items: start;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid #dfe6ef;
+  background: #fff;
+  font: inherit;
+  text-align: left;
+  color: #242323;
+  cursor: pointer;
+}
+.level:hover:not(:disabled) {
+  border-color: #0f9b98;
+}
+.level:focus-visible {
+  outline: 2px solid #0f9b98;
+  outline-offset: 1px;
+}
+.level:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.level[data-level="standard"] {
+  border-color: #0f9b98;
+  background: #e6f7f6;
+}
+.levelName {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #617185;
+}
+.levelAmount {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+.levelNote {
+  font-size: 11.5px;
+  color: #617185;
+}
+.breakdown summary {
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0f9b98;
+}
+.lines {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  display: grid;
+  gap: 4px;
+  border-radius: 12px;
+  background: #f7f9fb;
+  font-size: 12.5px;
+}
+.lines li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.lines li span:first-child {
+  color: #4f5d6e;
+  overflow-wrap: anywhere;
+}
+.lines li span:last-child {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+.linesTotal {
+  padding-top: 4px;
+  border-top: 1px solid #dfe6ef;
+  font-weight: 600;
+}
+.vipBadge {
+  background: #fff4e5;
+  color: #a15c07;
+}
+
+/* ── Driver pricing form ─────────────────────────────────────────── */
+.costGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.costGrid label {
+  display: grid;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #4f5d6e;
+}
+.costGrid input,
+.costGrid select {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dfe6ef;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  color: #1c1917;
+  min-width: 0;
+}
+.costGrid input:focus,
+.costGrid select:focus {
+  outline: 2px solid #0f9b98;
+  outline-offset: 1px;
+}
+.costGrid small {
+  font-weight: 400;
+  color: #8592a3;
+}
+@media (max-width: 760px) {
+  .costGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .levels {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,152 @@
+/* Place dropdown: same pill field as AuthField, with a BANJARA-styled list
+   (white card, soft shadow, teal accents) instead of the browser's datalist. */
+.wrap {
+  min-width: 0;
+}
+/* The list hangs from the input itself, whatever is shown below the field. */
+.anchor {
+  position: relative;
+}
+.input {
+  padding-right: 76px;
+  cursor: pointer;
+}
+.input:focus {
+  cursor: text;
+}
+.trailing {
+  position: absolute;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #67788e;
+}
+.clear {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--auth-line, #dfe6ef);
+  color: var(--auth-muted, #617185);
+  cursor: pointer;
+}
+.clear:hover {
+  background: var(--auth-line-hover, #cbd3de);
+  color: var(--auth-ink, #242323);
+}
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.toggle:hover {
+  color: var(--auth-ink, #242323);
+}
+.chevron {
+  transition: transform 0.15s;
+}
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  /* At least 300px wide so "Karimabad — Hunza, Gilgit-Baltistan" isn't cut off in a half-width field. */
+  width: max(100%, min(300px, calc(100vw - 32px)));
+  z-index: 30;
+  scrollbar-width: thin;
+  scrollbar-color: var(--auth-line-hover, #cbd3de) transparent;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 20px;
+  border: 1px solid var(--auth-line, #dfe6ef);
+  background: var(--auth-card, #fff);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(15, 23, 42, 0.05);
+  animation: rise 0.12s ease-out;
+  overscroll-behavior: contain;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}
+
+.heading {
+  padding: 8px 12px 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--auth-teal, #0f9b98);
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: var(--auth-ink, #242323);
+}
+.optionActive {
+  background: var(--auth-field, #f4f6f9);
+}
+.optionIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--auth-ok-soft, #f0fdf9);
+  color: var(--auth-teal, #0f9b98);
+}
+.optionText {
+  min-width: 0;
+  display: grid;
+}
+.optionText strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.optionText span {
+  font-size: 11.5px;
+  color: var(--auth-muted, #617185);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  color: var(--auth-muted, #617185);
+}
